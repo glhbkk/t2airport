@@ -3006,21 +3006,10 @@ function searchEmergency() {
       }
     }
 
-    // 카테고리 이름 자체도 검색
+    // 카테고리 이름 자체도 검색 (장비명 제목은 검색 제외)
     if (cat.toLowerCase().includes(q)) {
       if (!results.find(r => r.cat === cat && r.buildingName === cat)) {
         results.push({ buildingName: cat, cat, group });
-      }
-    }
-
-    // 일반 장비명도 검색
-    for (const c of contacts) {
-      if (c.phone === '') continue;
-      if (c.name.toLowerCase().includes(q) || c.phone.includes(q)) {
-        if (!results.find(r => r.cat === cat)) {
-          results.push({ buildingName: cat, cat, group });
-        }
-        break;
       }
     }
   }
