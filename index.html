@@ -976,7 +976,7 @@
       <h1>T2 점검</h1>
     </div>
     <div style="display:flex; gap:0.3rem;">
-      <button class="key-search-btn" onclick="openKeySearch()">🔑 열쇠 검색</button><button class="key-search-btn" onclick="openEmergency()">📞 비상연락처</button>
+      <button class="key-search-btn" onclick="openEmergency()">📞 비상연락처</button><button class="key-search-btn" onclick="openKeySearch()">🔑 열쇠 검색</button>
     </div>
   </header>
 
@@ -1525,6 +1525,15 @@ function renderCalendar() {
 }
 
 // ====== INIT ======
+// 뒤로가기 시 모달 닫기
+window.addEventListener('popstate', function(e) {
+  if (document.getElementById('keyModal').classList.contains('open')) {
+    closeKeySearch();
+  } else if (document.getElementById('emergencyModal').classList.contains('open')) {
+    closeEmergency();
+  }
+});
+
 function init() {
   selectedDate = new Date();
   calendarMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
@@ -1972,6 +1981,7 @@ function openKeySearch() {
   document.getElementById('keySearchInput').value = '';
   document.getElementById('keySearchInput').focus();
   searchKeys();
+  history.pushState({ modal: 'key' }, '');
 }
 
 function closeKeySearch() {
@@ -2911,6 +2921,7 @@ function openEmergency() {
   selectedEmgGroup = null;
   renderEmgCategories();
   renderEmergency();
+  history.pushState({ modal: 'emergency' }, '');
 }
 
 function closeEmergency() {
