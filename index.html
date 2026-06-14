@@ -1262,6 +1262,11 @@ const inspectionData = {
         locations: ['203','B36A','B36B','139A','139B','227A','233B','349A','349B','413A','413B','비상접근관제소','항공교통관제소(ACC)'],
         count: 13,
         days: ['일'],
+        note: [
+          { num: '174', name: 'AICC', remark: '', numWidth: '48px' },
+          { num: '패스', name: '비상접근관제소', remark: '', numWidth: '48px' },
+          { num: '데스크 문의', name: '항공교통관제소', remark: '입구 들어가서 오른쪽 복도 따라 끝까지<br>(인솔자 패스로만 개방 가능)', numWidth: '68px' },
+        ],
       },
       {
         title: '제2여객터미널 (서편-3,4단계)',
@@ -1787,7 +1792,7 @@ function renderCard(item) {
         <tr><th>번호</th><th>장소</th><th>비고</th></tr>
       </thead>
       <tbody>
-        ${item.note.map(r => `<tr><td class="${['패스','패스O'].includes(r.num) ? 'pass' : ''}">${r.num}</td><td>${r.name}</td><td>${r.remark}</td></tr>`).join('')}
+        ${item.note.map(r => `<tr><td class="${['패스','패스O'].includes(r.num) ? 'pass' : ''}" style="${r.numWidth ? `width:${r.numWidth};` : ''}">${r.num}</td><td>${r.name}</td><td>${r.remark}</td></tr>`).join('')}
       </tbody>
     </table>
   </div>` : ''}
