@@ -1598,6 +1598,7 @@ function renderAll() {
   const week = getWeekOfMonth(selectedDate);
   const day = DAYS[selectedDate.getDay()];
   const isSunday = selectedDate.getDay() === 0;
+  const isSaturday = selectedDate.getDay() === 6;
 
   const hasSplit = items.some(i => i.split);
   const hasThree = items.some(i => i.split && i.split.three);
@@ -1633,13 +1634,20 @@ function renderAll() {
 
   let html = '';
 
-  // 일요일이면 주간/야간 버튼 표시
+  // 일요일이면 주간/야간 버튼 표시, 토요일이면 주간 버튼만 표시
   if (isSunday) {
     html += `
       <div class="shift-selector">
         <span class="shift-label">점검 시간 :</span>
         <button class="shift-btn ${shiftMode === 'day' ? 'active' : ''}" onclick="setShift('day')">주간</button>
         <button class="shift-btn ${shiftMode === 'night' ? 'active' : ''}" onclick="setShift('night')">야간</button>
+      </div>
+    `;
+  } else if (isSaturday && items.length > 0) {
+    html += `
+      <div class="shift-selector">
+        <span class="shift-label">점검 시간 :</span>
+        <button class="shift-btn active">주간</button>
       </div>
     `;
   }
