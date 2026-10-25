@@ -1487,17 +1487,20 @@ function getWeekOfMonth(date) {
 
   if (firstDayOfMonth === 0) {
     // 1일이 일요일 → 1일부터 1주차
-    return Math.min(Math.floor((sunDay - 1) / 7) + 1, 4);
+    const w = Math.floor((sunDay - 1) / 7) + 1;
+    return w > 4 ? 0 : w;
   } else if (firstDayOfMonth >= 1 && firstDayOfMonth <= 4) {
     // 1일이 월~목 → 1일 포함 주가 1주차, 첫 일요일부터 2주차
     const firstSunday = 8 - firstDayOfMonth;
     if (sunDay < firstSunday) return 1;
-    return Math.min(Math.floor((sunDay - firstSunday) / 7) + 2, 4);
+    const w = Math.floor((sunDay - firstSunday) / 7) + 2;
+    return w > 4 ? 0 : w;
   } else {
     // 1일이 금·토 → 첫 일요일 이전 0주차
     const firstSunday = 8 - firstDayOfMonth;
     if (sunDay < firstSunday) return 0;
-    return Math.min(Math.floor((sunDay - firstSunday) / 7) + 1, 4);
+    const w = Math.floor((sunDay - firstSunday) / 7) + 1;
+    return w > 4 ? 0 : w;
   }
 }
 
