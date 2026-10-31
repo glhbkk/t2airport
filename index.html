@@ -1521,4 +1521,1883 @@ const inspectionDataT1 = {
       { title: '탑승동·계류장관제탑', locations: ['11207','11410','11612','11807','61004','62004','계류장관제탑 202','계류장관제탑 1005'], count: 8, days: ['수'] },
       { title: '제1교통센터', locations: ['30308','30717','30804','30808','40311','40704','40718','40805','40806'], count: 9, days: ['목'] },
       { title: '제1교통센터·스카이돔', locations: ['50308','50336','50707','50710','50715','50802','50808','50819','51213','60308','60715','70317','스카이돔 당재실','TPS실'], count: 14, days: ['금'] },
-      { title: '공항경비대본부·기계전기
+      { title: '공항경비대본부·기계전기작업장 등', locations: ['공항경비대본부','기계전기작업장','건축작업장','제설작업장1','차량정비고B','온실관리동','토목장비고B','토목장비고','토목작업장','자원분류처리장','관제수신소','3단계 자유무역 통신실','삼목레이더','온실','조경장비고','중앙창고','차량정비고A','일반주유소B','공항경비대 경비실'], count: 19, days: ['토'] },
+    ]
+  },
+};
+
+// ====== T1 열쇠 데이터 ======
+const keyDataT1 = [
+  { num: 1, name: '3단계 물류단지', category: 'T1 열쇠함' },
+  { num: 2, name: 'AICC 부통신실, CPS실', category: 'T1 열쇠함' },
+  { num: 3, name: 'GSE주유소 C', category: 'T1 열쇠함' },
+  { num: 4, name: 'GSE주유소 D', category: 'T1 열쇠함' },
+  { num: 5, name: 'ING 모터스', category: 'T1 열쇠함' },
+  { num: 6, name: 'T1 31412 CPS실 / 축전지실', category: 'T1 열쇠함' },
+  { num: 7, name: 'T1 31412 UPS내 CPS실', category: 'T1 열쇠함' },
+  { num: 8, name: '-', category: 'T1 열쇠함' },
+  { num: 9, name: '-', category: 'T1 열쇠함' },
+  { num: 10, name: '-', category: 'T1 열쇠함' },
+  { num: 11, name: 'T1 CPS실-2', category: 'T1 열쇠함' },
+  { num: 12, name: 'T1 CPS실-3', category: 'T1 열쇠함' },
+  { num: 13, name: 'T1 CPS실-4', category: 'T1 열쇠함' },
+  { num: 14, name: 'T1 체크인카운터 52400(D2) 부통신실', category: 'T1 열쇠함' },
+  { num: 15, name: 'T1 체크인카운터 54800(D2)-AF9 부통신실', category: 'T1 열쇠함' },
+  { num: 16, name: 'T1 체크인카운터 55200(D2)-AF8 부통신실', category: 'T1 열쇠함' },
+  { num: 17, name: 'T1 체크인카운터 부통신실-1', category: 'T1 열쇠함' },
+  { num: 18, name: 'T1 체크인카운터 부통신실-2', category: 'T1 열쇠함' },
+  { num: 19, name: '건축작업장', category: 'T1 열쇠함' },
+  { num: 20, name: '경비대 C동 CPS실', category: 'T1 열쇠함' },
+  { num: 21, name: '경비대 본부', category: 'T1 열쇠함' },
+  { num: 22, name: '경비대 분소', category: 'T1 열쇠함' },
+  { num: 23, name: '관제탑', category: 'T1 열쇠함' },
+  { num: 24, name: '관제탑 지원시설동 CPS실', category: 'T1 열쇠함' },
+  { num: 25, name: '기계,전기', category: 'T1 열쇠함' },
+  { num: 26, name: '기상대본부 CPS실', category: 'T1 열쇠함' },
+  { num: 27, name: '단기주차 관리소', category: 'T1 열쇠함' },
+  { num: 28, name: '동력동 A', category: 'T1 열쇠함' },
+  { num: 29, name: '동력동 B', category: 'T1 열쇠함' },
+  { num: 30, name: '동절기 장비고 A', category: 'T1 열쇠함' },
+  { num: 31, name: '동절기 장비고 B', category: 'T1 열쇠함' },
+  { num: 32, name: '동절기 장비고 C', category: 'T1 열쇠함' },
+  { num: 33, name: '동절기 장비고 E', category: 'T1 열쇠함' },
+  { num: 34, name: '차량정비고 B', category: 'T1 열쇠함' },
+  { num: 35, name: '배전변전소 A', category: 'T1 열쇠함' },
+  { num: 36, name: '배전변전소 B', category: 'T1 열쇠함' },
+  { num: 37, name: '비행장 시설(구 기상대)', category: 'T1 열쇠함' },
+  { num: 38, name: '소방대본부', category: 'T1 열쇠함' },
+  { num: 39, name: '소방대분소 A', category: 'T1 열쇠함' },
+  { num: 40, name: '소방대분소 B', category: 'T1 열쇠함' },
+  { num: 41, name: '소방훈련시설', category: 'T1 열쇠함' },
+  { num: 42, name: '스카이돔(방송실 외함)', category: 'T1 열쇠함' },
+  { num: 43, name: '신불레이다', category: 'T1 열쇠함' },
+  { num: 44, name: '싱가폴라운지 캡스키(62624)', category: 'T1 열쇠함' },
+  { num: 45, name: '온실관리동', category: 'T1 열쇠함' },
+  { num: 46, name: '왕산레이다', category: 'T1 열쇠함' },
+  { num: 47, name: '인재개발원', category: 'T1 열쇠함' },
+  { num: 48, name: '자유무역-1(행정지원센터)', category: 'T1 열쇠함' },
+  { num: 49, name: '자유무역-2', category: 'T1 열쇠함' },
+  { num: 50, name: '제설작업장 1', category: 'T1 열쇠함' },
+  { num: 51, name: '제설작업장 2', category: 'T1 열쇠함' },
+  { num: 52, name: '제1교통센터 (부), 30603', category: 'T1 열쇠함' },
+  { num: 53, name: '-', category: 'T1 열쇠함' },
+  { num: 54, name: '제1교통센터 FA-1', category: 'T1 열쇠함' },
+  { num: 55, name: '제1교통센터 락카룸 (입구기준 우측 1)', category: 'T1 열쇠함' },
+  { num: 56, name: '제1교통센터 창고-1 (입구기준 우측 2)', category: 'T1 열쇠함' },
+  { num: 57, name: '제1교통센터 창고-2 (입구기준 좌측)', category: 'T1 열쇠함' },
+  { num: 58, name: '제2자유무역(주통신실)', category: 'T1 열쇠함' },
+  { num: 59, name: '장기주차장 주차타워 동편 부통신실', category: 'T1 열쇠함' },
+  { num: 60, name: '장기주차장 주차타워 서편 부통신실', category: 'T1 열쇠함' },
+  { num: 61, name: '주변전소 A', category: 'T1 열쇠함' },
+  { num: 62, name: '주변전소 B', category: 'T1 열쇠함' },
+  { num: 63, name: '주차유도 부통신실', category: 'T1 열쇠함' },
+  { num: 64, name: '청사(동관) CPS실', category: 'T1 열쇠함' },
+  { num: 65, name: '청사(서관) CPS실', category: 'T1 열쇠함' },
+  { num: 66, name: '청사(서관) 부통신실', category: 'T1 열쇠함' },
+  { num: 67, name: '탑승동 CPS실, 계류장관제탑', category: 'T1 열쇠함' },
+  { num: 68, name: '토목 작업장', category: 'T1 열쇠함' },
+  { num: 69, name: '토목장비고 B', category: 'T1 열쇠함' },
+  { num: 70, name: '통신실 RACK(공용)', category: 'T1 열쇠함' },
+  { num: 71, name: '합동청사 부통신실', category: 'T1 열쇠함' },
+  { num: 72, name: '항공등화B 야생동물', category: 'T1 열쇠함' },
+  { num: 73, name: '항공훈련센터', category: 'T1 열쇠함' },
+  { num: 74, name: '물류단지 후문 초소', category: 'T1 열쇠함' },
+  { num: 75, name: '(T1,교통센터,탑승동) 주통신실 보관함 열쇠', category: 'T1 열쇠함' },
+  { num: 76, name: '-', category: 'T1 열쇠함' },
+];
+
+// ====== STATE ======
+let selectedDate = new Date();
+let crewMode = 'basic'; // 'basic' or 'two'
+let currentTerminal = localStorage.getItem('selectedTerminal') || 'T2'; // 'T1' or 'T2'
+
+// 현재 시간에 따라 주간/야간 자동 설정
+// 오전 6시(6:00) ~ 오후 5시(17:00) → 주간, 그 외 → 야간
+function getDefaultShift() {
+  const h = new Date().getHours();
+  return (h >= 6 && h < 17) ? 'day' : 'night';
+}
+let shiftMode = getDefaultShift();
+let calendarMonth = new Date(); // 달력에 표시 중인 연/월
+
+function getWeekOfMonth(date) {
+  const d = date.getDate();
+  const dow = date.getDay();
+
+  const thisSunday = new Date(date); thisSunday.setDate(d - dow);
+  const thisSaturday = new Date(thisSunday); thisSaturday.setDate(thisSunday.getDate() + 6);
+
+  // 이번 주에 다음달 1일이 포함되는지 확인
+  const nextMonth1st = new Date(thisSunday.getFullYear(), thisSunday.getMonth() + 1, 1);
+  const nm1stDow = nextMonth1st.getDay();
+  if (nextMonth1st >= thisSunday && nextMonth1st <= thisSaturday) {
+    if (nm1stDow >= 1 && nm1stDow <= 4) return 1;  // 다음달 1주차
+    if (nm1stDow >= 5) return 0; // 점검없음
+  }
+
+  const year = thisSunday.getFullYear();
+  const month = thisSunday.getMonth();
+  const sunDay = thisSunday.getDate();
+  const firstDayOfMonth = new Date(year, month, 1).getDay();
+
+  if (firstDayOfMonth === 0) {
+    // 1일이 일요일 → 1일부터 1주차
+    const w = Math.floor((sunDay - 1) / 7) + 1;
+    return w > 4 ? 0 : w;
+  } else if (firstDayOfMonth >= 1 && firstDayOfMonth <= 4) {
+    // 1일이 월~목 → 1일 포함 주가 1주차, 첫 일요일부터 2주차
+    const firstSunday = 8 - firstDayOfMonth;
+    if (sunDay < firstSunday) return 1;
+    const w = Math.floor((sunDay - firstSunday) / 7) + 2;
+    return w > 4 ? 0 : w;
+  } else {
+    // 1일이 금·토 → 첫 일요일 이전 0주차
+    const firstSunday = 8 - firstDayOfMonth;
+    if (sunDay < firstSunday) return 0;
+    const w = Math.floor((sunDay - firstSunday) / 7) + 1;
+    return w > 4 ? 0 : w;
+  }
+}
+
+function hasInspection(date) {
+  return getItemsForDay(date).length > 0;
+}
+
+function formatDate(date) {
+  return `${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`;
+}
+
+function toggleCalendar() {
+  const wrap = document.getElementById('calendarWrap');
+  const btn = document.getElementById('calToggleBtn');
+  const isOpen = wrap.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  btn.querySelector('span:first-child').textContent = isOpen ? '📅 달력 숨기기' : '📅 달력 보기';
+}
+
+function moveMonth(delta) {
+  calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + delta, 1);
+  renderCalendar();
+}
+
+function renderCalendar() {
+  const year = calendarMonth.getFullYear();
+  const month = calendarMonth.getMonth();
+  const today = new Date();
+
+  document.getElementById('calMonthLabel').textContent =
+    `${year}년 ${month + 1}월`;
+
+  const firstDay = new Date(year, month, 1).getDay(); // 0=일
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  const DOW = ['일','월','화','수','목','금','토'];
+  let html = DOW.map(d => `<div class="cal-dow">${d}</div>`).join('');
+
+  // 빈 칸
+  for (let i = 0; i < firstDay; i++) {
+    html += `<div class="cal-day empty"></div>`;
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dt = new Date(year, month, d);
+    const dow = dt.getDay();
+    const isToday = dt.toDateString() === today.toDateString();
+    const isSelected = dt.toDateString() === selectedDate.toDateString();
+    const hasDot = hasInspection(dt);
+    const cls = [
+      'cal-day',
+      dow === 0 ? 'sunday' : '',
+      dow === 6 ? 'saturday' : '',
+      isToday ? 'today' : '',
+      isSelected ? 'selected' : '',
+    ].filter(Boolean).join(' ');
+
+    html += `<div class="${cls}" onclick="selectDate(new Date(${dt.getTime()}))">
+      ${d}${hasDot ? '<span class="dot"></span>' : ''}
+    </div>`;
+  }
+
+  document.getElementById('calGrid').innerHTML = html;
+}
+
+// ====== INIT ======
+function init() {
+  selectedDate = new Date();
+  calendarMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
+  updateTerminalUI();
+  renderCalendar();
+  renderDateNav();
+  renderAll();
+}
+
+function setTerminal(t) {
+  currentTerminal = t;
+  localStorage.setItem('selectedTerminal', t);
+  updateTerminalUI();
+  renderAll();
+}
+
+function updateTerminalUI() {
+  const h1 = document.querySelector('header h1');
+  if (h1) h1.textContent = currentTerminal === 'T1' ? 'T1 점검' : 'T2 점검';
+  // 터미널 선택 버튼 활성화 표시
+  document.querySelectorAll('.terminal-sel-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.t === currentTerminal);
+  });
+}
+
+function getActiveInspectionData() {
+  return currentTerminal === 'T1' ? inspectionDataT1 : inspectionData;
+}
+
+function getActiveKeyData() {
+  return currentTerminal === 'T1' ? keyDataT1 : keyData;
+}
+
+function renderDateNav() {
+  const today = new Date();
+  const yesterday = new Date(today); yesterday.setDate(today.getDate() - 1);
+  const tomorrow = new Date(today); tomorrow.setDate(today.getDate() + 1);
+
+  const dates = [
+    { label: '어제', date: yesterday },
+    { label: '오늘', date: today },
+    { label: '내일', date: tomorrow },
+  ];
+
+  document.getElementById('dateNav').innerHTML = dates.map(({ label, date }) => {
+    const isActive = date.toDateString() === selectedDate.toDateString();
+    const dayName = DAYS[date.getDay()] + '요일';
+    return `
+      <div class="date-nav-btn ${isActive ? 'active' : ''}"
+        onclick="selectDate(new Date(${date.getTime()}))">
+        <div class="nav-label">${label}</div>
+        <div class="nav-date">${formatDate(date)}</div>
+        <div class="nav-day">${dayName}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function selectDate(date) {
+  selectedDate = date;
+  crewMode = 'basic';
+  shiftMode = getDefaultShift();
+  // 선택한 날짜가 다른 달이면 달력도 이동
+  calendarMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+  renderCalendar();
+  renderDateNav();
+  renderAll();
+}
+
+function getItemsForDay(date) {
+  const day = DAYS[date.getDay()];
+  const week = getWeekOfMonth(date);
+  const result = [];
+  const data = getActiveInspectionData();
+  for (const [groupKey, group] of Object.entries(data)) {
+    if (group.cycle === `${week}주차`) {
+      for (const item of group.items) {
+        if (item.days.includes(day)) result.push({ ...item, cycle: group.cycle, grade: group.grade });
+      }
+    }
+  }
+  return result;
+}
+
+function renderAll() {
+  const items = getItemsForDay(selectedDate);
+  const week = getWeekOfMonth(selectedDate);
+  const day = DAYS[selectedDate.getDay()];
+  const isSunday = selectedDate.getDay() === 0;
+  const isSaturday = selectedDate.getDay() === 6;
+
+  const hasSplit = items.some(i => i.split);
+  const hasThree = items.some(i => i.split && i.split.three);
+
+  // 총 개소 계산
+  let totalCount = 0;
+  if (isSunday && shiftMode === 'night' && currentTerminal === 'T2') {
+    totalCount = nightItems.reduce((s, i) => s + (i.count || 0), 0);
+  } else {
+    for (const item of items) {
+      if (item.split && crewMode === 'two') {
+        const arr = item.split.two || [item.split.west, item.split.east];
+        totalCount += arr.reduce((s, c) => s + c.locations.length, 0);
+      } else if (item.split && crewMode === 'three' && item.split.three) {
+        totalCount += item.split.three.reduce((s, c) => s + c.locations.length, 0);
+      } else {
+        totalCount += (item.count || 0);
+      }
+    }
+  }
+
+  const countNavEl = document.getElementById('countNav');
+  if (countNavEl) {
+    countNavEl.innerHTML = `
+      <div class="date-nav-btn" style="cursor:default; grid-column: 1 / -1; padding: 0.4rem 1rem; display:flex; flex-direction:row; align-items:center; justify-content:center; gap:0.6rem;">
+        <div class="nav-day" style="margin:0; margin-right:0.4rem">${week === 0 ? '5주차' : week + '주차'} · ${day}요일</div>
+        <div class="nav-label" style="margin:0">총</div>
+        <div class="nav-date" style="font-size:1rem">${totalCount}</div>
+        <div class="nav-label" style="margin:0">개소</div>
+      </div>
+    `;
+  }
+
+  let html = '';
+
+  // 일요일이면 주간/야간 버튼 표시 (T2만), 토요일이면 주간 버튼만 표시
+  if (isSunday && currentTerminal === 'T2') {
+    html += `
+      <div class="shift-selector">
+        <span class="shift-label">점검 시간 :</span>
+        <button class="shift-btn ${shiftMode === 'day' ? 'active' : ''}" onclick="setShift('day')">주간</button>
+        <button class="shift-btn ${shiftMode === 'night' ? 'active' : ''}" onclick="setShift('night')">야간</button>
+      </div>
+    `;
+  } else if (isSaturday && items.length > 0) {
+    html += `
+      <div class="shift-selector">
+        <span class="shift-label">점검 시간 :</span>
+        <button class="shift-btn active">주간</button>
+      </div>
+    `;
+  }
+
+  if (isSunday && shiftMode === 'night' && currentTerminal === 'T2') {
+    // 야간 점검 표시 (T2 전용)
+    html += `<div class="cards-grid">`;
+    for (const item of nightItems) {
+      html += renderCard({ ...item, cycle: `${week}주차`, grade: 'A/B/C/무등급' });
+    }
+    html += `</div>`;
+  } else if (items.length === 0) {
+    html += `<div class="empty-state">이 날의 점검 항목이 없습니다.</div>`;
+  } else {
+    if (hasSplit) {
+      html += `
+        <div class="crew-selector">
+          <span class="crew-label">점검 인원 :</span>
+          <button class="crew-btn ${crewMode === 'basic' ? 'active' : ''}" onclick="setCrew('basic')">기본</button>
+          <button class="crew-btn ${crewMode === 'two' ? 'active' : ''}" onclick="setCrew('two')">2명</button>
+          ${hasThree ? `<button class="crew-btn ${crewMode === 'three' ? 'active' : ''}" onclick="setCrew('three')">3명</button>` : ''}
+        </div>
+      `;
+    }
+    const cycles = {};
+    for (const item of items) {
+      if (!cycles[item.cycle]) cycles[item.cycle] = [];
+      cycles[item.cycle].push(item);
+    }
+    for (const [cycle, cycleItems] of Object.entries(cycles)) {
+      html += `<div class="cards-grid">`;
+      for (const item of cycleItems) {
+        if (item.split && crewMode === 'two') {
+          const arr = item.split.two || [item.split.west, item.split.east];
+          for (const c of arr) html += renderCard({ ...c, cycle: item.cycle, grade: item.grade, count: c.locations.length });
+        } else if (item.split && crewMode === 'three' && item.split.three) {
+          for (const c of item.split.three) html += renderCard({ ...c, cycle: item.cycle, grade: item.grade, count: c.locations.length });
+        } else {
+          html += renderCard(item);
+        }
+      }
+      html += `</div>`;
+    }
+  }
+
+  document.getElementById('mainContent').innerHTML = html;
+  document.getElementById('footerInfo').textContent =
+    `마지막 업데이트: ${new Date().toLocaleString('ko-KR')} · v1.0`;
+}
+
+function setCrew(mode) {
+  crewMode = mode;
+  renderAll();
+}
+
+function setShift(mode) {
+  shiftMode = mode;
+  renderAll();
+}
+
+// 야간 점검 데이터 (모든 주차 일요일 공통)
+const nightItems = [
+  {
+    title: '제2여객터미널 세관 (야간)',
+    locations: ['32703','33305'],
+    count: 2,
+  },
+  {
+    title: '제2여객터미널 서편 (야간)',
+    locations: ['37781','47381','52604','제2교통센터 주통신실 21408'],
+    highlighted: ['37781','47381'],
+    count: 4,
+  },
+  {
+    title: '제2여객터미널 동편 (야간)',
+    locations: ['38781','48381','53416','제2여객 주통신실 40721','제2합동청사 주통신실 214호','제2합동청사 증축동 주통신실'],
+    highlighted: ['38781','48381'],
+    count: 6,
+  },
+  {
+    title: '외곽 (야간)',
+    locations: ['AICC 202호','ICT 202호','행정지원센터 1층'],
+    count: 3,
+  },
+];
+
+// checked 상태 저장: key = "cardTitle::loc"
+const checkedLocs = new Set();
+
+function toggleLoc(key, el) {
+  if (checkedLocs.has(key)) {
+    checkedLocs.delete(key);
+    el.classList.remove('checked');
+  } else {
+    checkedLocs.add(key);
+    el.classList.add('checked');
+  }
+  // 진행률 업데이트
+  const cardEl = el.closest('.insp-card');
+  updateProgress(cardEl);
+}
+
+function updateProgress(cardEl) {
+  const tags = cardEl.querySelectorAll('.loc-tag');
+  const total = tags.length;
+  const done = cardEl.querySelectorAll('.loc-tag.checked').length;
+  const pct = total ? Math.round(done / total * 100) : 0;
+  const fill = cardEl.querySelector('.progress-fill');
+  const text = cardEl.querySelector('.progress-text');
+  if (fill) fill.style.width = pct + '%';
+  if (text) text.textContent = `${done}/${total}`;
+}
+
+function gradeClass(grade) {
+  if (!grade) return 'grade-none';
+  if (grade === 'S') return 'grade-s';
+  if (grade.startsWith('A')) return 'grade-a';
+  if (grade.startsWith('B')) return 'grade-b';
+  if (grade.startsWith('C')) return 'grade-c';
+  return 'grade-none';
+}
+
+function renderCard(item) {
+  const gc = gradeClass(item.grade);
+
+  const total = item.locations.length;
+  const doneCount = item.locations.filter(loc => checkedLocs.has(`${item.title}::${loc}`)).length;
+  const pct = total ? Math.round(doneCount / total * 100) : 0;
+
+  const locTags = item.locations.map(loc => {
+    const key = `${item.title}::${loc}`;
+    const isHL = item.highlighted && item.highlighted.some(h => loc.includes(h));
+    const isChecked = checkedLocs.has(key);
+    return `<span class="loc-tag ${isHL ? 'highlight' : ''} ${isChecked ? 'checked' : ''}"
+      onclick="toggleLoc('${key.replace(/'/g,"\\'")}', this)">${loc}</span>`;
+  }).join('');
+
+  return `
+    <div class="insp-card ${gc}">
+      <div class="card-top">
+        <div class="card-title">${item.title}</div>
+      </div>
+      <div class="card-progress">
+        <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <div class="progress-text">${doneCount}/${total}</div>
+      </div>
+      <div class="locations-label">점검 위치</div>
+      <div class="location-tags">${locTags}</div>
+    </div>
+  ${item.note ? `
+  <div class="card-note">
+    <div class="card-note-title">🔑 열쇠목록</div>
+    <table class="note-table">
+      <thead>
+        <tr><th style="${item.noteStyle ? `width:${item.noteStyle.numWidth}` : ''}">번호</th><th>장소</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        ${item.note.map(r => `<tr><td class="${['패스','패스O'].includes(r.num) ? 'pass' : ''}" style="${item.noteStyle ? `width:${item.noteStyle.numWidth}` : ''}">${r.num}</td><td>${r.name}</td><td>${r.remark}</td></tr>`).join('')}
+      </tbody>
+    </table>
+  </div>` : ''}
+  `;
+}
+
+// ====== 열쇠 데이터 ======
+const keyData = [
+  // 제1열쇠함 #1
+  { num: 1, name: 'T2 CPS-1', category: '제1열쇠함#1' },
+  { num: 2, name: 'T2 CPS-2', category: '제1열쇠함#1' },
+  { num: 3, name: 'T2 CPS (40721, 44506, 45304)', category: '제1열쇠함#1' },
+  { num: 4, name: 'T2 4단계 CPS-1', category: '제1열쇠함#1' },
+  { num: 5, name: 'T2 4단계 CPS-2', category: '제1열쇠함#1' },
+  { num: 6, name: 'T2 4단계 통신실-1', category: '제1열쇠함#1' },
+  { num: 7, name: 'T2 4단계 통신실-2', category: '제1열쇠함#1' },
+  { num: 8, name: '4단계 통신실 랙 Key-1', category: '제1열쇠함#1' },
+  { num: 9, name: '4단계 통신실 랙 Key-2', category: '제1열쇠함#1' },
+  { num: 10, name: '제2교통 주통신실 B1F-1408 (21408)', category: '제1열쇠함#1' },
+  { num: 11, name: '제2교통센터 CPS실', category: '제1열쇠함#1' },
+  { num: 12, name: '제2교통센터 B1.5-1518 (151518)', category: '제1열쇠함#1' },
+  { num: 13, name: '제2교통센터 B1F-0705 (20705)', category: '제1열쇠함#1' },
+  { num: 14, name: '제2교통센터 B1F-0807 (20807)', category: '제1열쇠함#1' },
+  { num: 15, name: '제2교통센터 B1F-1106 (21106)', category: '제1열쇠함#1' },
+  { num: 16, name: '제2교통센터 B1F-1207 (21207)', category: '제1열쇠함#1' },
+  { num: 17, name: '제2교통센터 B1F-1304 (21304)', category: '제1열쇠함#1' },
+  { num: 18, name: '제2교통센터 B1F-1412 (21412)', category: '제1열쇠함#1' },
+  { num: 19, name: '제2교통센터 B1F-1710 (21710)', category: '제1열쇠함#1' },
+  { num: 20, name: '제2교통센터 B1F-1714 (21714)', category: '제1열쇠함#1' },
+  { num: 21, name: '제2교통센터 B1F-1803 (21803)', category: '제1열쇠함#1' },
+  { num: 22, name: '제2교통센터 B2F-2107 (22107)', category: '제1열쇠함#1' },
+  { num: 23, name: '제2교통센터 B2F-2206 (22206)', category: '제1열쇠함#1' },
+  { num: 24, name: '제2교통센터 M-0705 (250705)', category: '제1열쇠함#1' },
+  { num: 25, name: '제2교통센터 M-0806 (250806)', category: '제1열쇠함#1' },
+  { num: 26, name: '제2교통센터 M-1105 (251105)', category: '제1열쇠함#1' },
+  { num: 27, name: '제2교통센터 M-1206 (251206)', category: '제1열쇠함#1' },
+  { num: 28, name: '제2교통센터 M-1504 (251504)', category: '제1열쇠함#1' },
+  { num: 29, name: '제2교통센터 M-1604 (251604)', category: '제1열쇠함#1' },
+  { num: 30, name: '제2교통센터 1F-0902 (30902)', category: '제1열쇠함#1' },
+  { num: 31, name: '제2교통센터 1F-1002 (31002)', category: '제1열쇠함#1' },
+  { num: 32, name: '제2교통센터 2F-1503 (41503)', category: '제1열쇠함#1' },
+  { num: 33, name: '제2교통센터 2F-0704 (40704)', category: '제1열쇠함#1' },
+  { num: 34, name: '제2교통센터 2F-0808 (40808)', category: '제1열쇠함#1' },
+  { num: 35, name: '제2교통센터 2F-1106 (41106)', category: '제1열쇠함#1' },
+  { num: 36, name: '제2교통센터 2F-1204 (41204)', category: '제1열쇠함#1' },
+  { num: 37, name: '제2교통센터 2F-1604 (41604)', category: '제1열쇠함#1' },
+  { num: 38, name: '제2교통센터 3F-1503 (51503)', category: '제1열쇠함#1' },
+  { num: 39, name: '제2교통센터 3F-0704 (50704)', category: '제1열쇠함#1' },
+  { num: 40, name: '제2교통센터 3F-0801 (50801)', category: '제1열쇠함#1' },
+  { num: 41, name: '제2교통센터 3F-1601 (51601)', category: '제1열쇠함#1' },
+  { num: 42, name: '제2교통센터 3F-1103 (51103)', category: '제1열쇠함#1' },
+  { num: 43, name: '제2교통센터 3F-1204 (51204)', category: '제1열쇠함#1' },
+  { num: 44, name: '제2교통센터 2F-0805 (40805) 이동통신실', category: '제1열쇠함#1' },
+  { num: 45, name: '제2교통센터 2F-1108 (41108) 이동통신실', category: '제1열쇠함#1' },
+  { num: 46, name: '제2교통센터 3F-0804 (50804) 이동통신실', category: '제1열쇠함#1' },
+  { num: 47, name: '제2교통센터 3F-1108 (51108) 이동통신실', category: '제1열쇠함#1' },
+  { num: 48, name: '제2합동청사 주통신실 2F-0014 (214)', category: '제1열쇠함#1' },
+  { num: 49, name: '제2합동청사 B1F-0049 (B149)', category: '제1열쇠함#1' },
+  { num: 50, name: '제2합동청사 B1F-0051 (B151)', category: '제1열쇠함#1' },
+  // 제1열쇠함 #2
+  { num: 51, name: '제2합동청사 B1F-0050 (B150)', category: '제1열쇠함#2' },
+  { num: 52, name: '제2합동청사 B1F-0052 (B152)', category: '제1열쇠함#2' },
+  { num: 53, name: '제2합동청사 1F-0011 (111)', category: '제1열쇠함#2' },
+  { num: 54, name: '제2합동청사 1F-0032 (132)', category: '제1열쇠함#2' },
+  { num: 55, name: '제2합동청사 1F-0019 (119)', category: '제1열쇠함#2' },
+  { num: 56, name: '제2합동청사 1F-0033 (133)', category: '제1열쇠함#2' },
+  { num: 57, name: '제2합동청사 2F-0009 (209)', category: '제1열쇠함#2' },
+  { num: 58, name: '제2합동청사 2F-0026 (226)', category: '제1열쇠함#2' },
+  { num: 59, name: '제2합동청사 2F-0018 (218)', category: '제1열쇠함#2' },
+  { num: 60, name: '제2합동청사 2F-0027 (227)', category: '제1열쇠함#2' },
+  { num: 61, name: '제2합동청사 3F-0007 (307)', category: '제1열쇠함#2' },
+  { num: 62, name: '제2합동청사 3F-0024 (324)', category: '제1열쇠함#2' },
+  { num: 63, name: '제2합동청사 3F-0015 (315)', category: '제1열쇠함#2' },
+  { num: 64, name: '제2합동청사 3F-0025 (325)', category: '제1열쇠함#2' },
+  { num: 65, name: '제2합동청사 4F-0010 (410)', category: '제1열쇠함#2' },
+  { num: 66, name: '제2합동청사 4F-0026 (426)', category: '제1열쇠함#2' },
+  { num: 67, name: '제2합동청사 4F-0018 (418)', category: '제1열쇠함#2' },
+  { num: 68, name: '제2합동청사 4F-0027 (427)', category: '제1열쇠함#2' },
+  { num: 69, name: '제2계류장관제소 CPS실 지하1층', category: '제1열쇠함#2' },
+  { num: 70, name: '제2계류장관제소 CPS실 1층', category: '제1열쇠함#2' },
+  { num: 71, name: '제2계류장관제소 CPS실 2층', category: '제1열쇠함#2' },
+  { num: 72, name: '제2계류장관제소 CPS실 3층', category: '제1열쇠함#2' },
+  { num: 73, name: '제2계류장관제소 CPS실 4층', category: '제1열쇠함#2' },
+  { num: 74, name: '제2계류장관제소 CPS실 5층', category: '제1열쇠함#2' },
+  { num: 75, name: '제2계류장관제소 CPS실 6층', category: '제1열쇠함#2' },
+  { num: 76, name: '제2계류장관제소 CPS실 7층', category: '제1열쇠함#2' },
+  { num: 77, name: '제2계류장관제소 CPS실 8층', category: '제1열쇠함#2' },
+  { num: 78, name: '제2계류장관제소 CPS실 9층', category: '제1열쇠함#2' },
+  { num: 79, name: '제2계류장관제소 CPS실 10층', category: '제1열쇠함#2' },
+  { num: 80, name: '제2계류장관제소 CPS실 11층', category: '제1열쇠함#2' },
+  { num: 81, name: '제2계류장관제소 CPS실 12층', category: '제1열쇠함#2' },
+  { num: 82, name: '청사 서관 CPS', category: '제1열쇠함#2' },
+  { num: 83, name: '청사 동관 CPS', category: '제1열쇠함#2' },
+  { num: 84, name: '합동청사', category: '제1열쇠함#2' },
+  { num: 85, name: '공항청사', category: '제1열쇠함#2' },
+  { num: 86, name: 'ICT 증축동 109', category: '제1열쇠함#2' },
+  { num: 87, name: 'ICT 증축동 223', category: '제1열쇠함#2' },
+  { num: 88, name: 'ICT 증축동 331', category: '제1열쇠함#2' },
+  { num: 89, name: 'AICC 344호 이동통신실-1', category: '제1열쇠함#2' },
+  { num: 90, name: 'AICC 344호 이동통신실-2', category: '제1열쇠함#2' },
+  // 제1열쇠함 #3
+  { num: 91, name: 'AICC 통신실', category: '제1열쇠함#3' },
+  { num: 92, name: '제설작업장1, 제설작업장1 출입문', category: '제1열쇠함#3' },
+  { num: 93, name: '제설작업장2', category: '제1열쇠함#3' },
+  { num: 94, name: 'A/S 제설작업장 1층 CPS', category: '제1열쇠함#3' },
+  { num: 95, name: 'A/S 제설작업장 2층 CPS', category: '제1열쇠함#3' },
+  { num: 96, name: '4단계 Airside 제설작업장 1F CPS', category: '제1열쇠함#3' },
+  { num: 97, name: '4단계 Airside 제설작업장 2F CPS', category: '제1열쇠함#3' },
+  { num: 98, name: 'T2 제설자재창고', category: '제1열쇠함#3' },
+  { num: 99, name: '경비대본부 통신실', category: '제1열쇠함#3' },
+  { num: 100, name: '경비대 C동', category: '제1열쇠함#3' },
+  { num: 101, name: '경비대본부 옆문', category: '제1열쇠함#3' },
+  { num: 102, name: '경비대본부 경비실', category: '제1열쇠함#3' },
+  { num: 103, name: '경비대분소', category: '제1열쇠함#3' },
+  { num: 104, name: '출입초소#10', category: '제1열쇠함#3' },
+  { num: 105, name: '출입초소#11', category: '제1열쇠함#3' },
+  { num: 106, name: '소방대본부', category: '제1열쇠함#3' },
+  { num: 107, name: '소방대분소A', category: '제1열쇠함#3' },
+  { num: 108, name: '소방대분소B', category: '제1열쇠함#3' },
+  { num: 109, name: '비행장시설 (구)기상대', category: '제1열쇠함#3' },
+  { num: 110, name: '비행장시설 CPS (구)기상대', category: '제1열쇠함#3' },
+  { num: 111, name: '동절기장비고A', category: '제1열쇠함#3' },
+  { num: 112, name: '동절기장비고B', category: '제1열쇠함#3' },
+  { num: 113, name: '동절기장비고C', category: '제1열쇠함#3' },
+  { num: 114, name: '동절기장비고D', category: '제1열쇠함#3' },
+  { num: 115, name: '동절기장비고E', category: '제1열쇠함#3' },
+  { num: 116, name: '동절기장비고F 1F CPS', category: '제1열쇠함#3' },
+  { num: 117, name: '주변전소A', category: '제1열쇠함#3' },
+  { num: 118, name: '주변전소B', category: '제1열쇠함#3' },
+  { num: 119, name: '4단계 주변전소C', category: '제1열쇠함#3' },
+  { num: 120, name: '4단계 주변전소C 1층 CPS', category: '제1열쇠함#3' },
+  { num: 121, name: '4단계 주변전소C 2층 CPS', category: '제1열쇠함#3' },
+  { num: 122, name: '배전변전소A', category: '제1열쇠함#3' },
+  { num: 123, name: '배전변전소B', category: '제1열쇠함#3' },
+  { num: 124, name: '항공동화작업장', category: '제1열쇠함#3' },
+  { num: 125, name: '항공동화작업장B (야생동물통제대)', category: '제1열쇠함#3' },
+  { num: 126, name: '동력동A', category: '제1열쇠함#3' },
+  { num: 127, name: '동력동B', category: '제1열쇠함#3' },
+  { num: 128, name: '물류배전', category: '제1열쇠함#3' },
+  { num: 129, name: '행정지원센터, 사업지원센터', category: '제1열쇠함#3' },
+  { num: 130, name: '2단계 자유무역통신실-1', category: '제1열쇠함#3' },
+  // 제1열쇠함 #4
+  { num: 131, name: '2단계 자유무역통신실-2', category: '제1열쇠함#4' },
+  { num: 132, name: '3단계 물류단지', category: '제1열쇠함#4' },
+  { num: 133, name: '물류단지 후문초소', category: '제1열쇠함#4' },
+  { num: 134, name: '3단계 전기통신실', category: '제1열쇠함#4' },
+  { num: 135, name: '건축작업장', category: '제1열쇠함#4' },
+  { num: 136, name: '제2건축작업장', category: '제1열쇠함#4' },
+  { num: 137, name: 'A/S 건축작업장', category: '제1열쇠함#4' },
+  { num: 138, name: '중앙창고', category: '제1열쇠함#4' },
+  { num: 139, name: '제2중앙창고', category: '제1열쇠함#4' },
+  { num: 140, name: '토목장비고B', category: '제1열쇠함#4' },
+  { num: 141, name: '제2토목장비고', category: '제1열쇠함#4' },
+  { num: 142, name: '토목작업장', category: '제1열쇠함#4' },
+  { num: 143, name: '항공훈련 1F', category: '제1열쇠함#4' },
+  { num: 144, name: '항공훈련센터 (2층 주통신실)', category: '제1열쇠함#4' },
+  { num: 145, name: '항공훈련센터 (317 부통신실)', category: '제1열쇠함#4' },
+  { num: 146, name: '인재개발원', category: '제1열쇠함#4' },
+  { num: 147, name: '인재개발원 조정실', category: '제1열쇠함#4' },
+  { num: 148, name: '관제탑', category: '제1열쇠함#4' },
+  { num: 149, name: '관제탑 지원시설동 CPS', category: '제1열쇠함#4' },
+  { num: 150, name: '기계/전기 작업장(기계전기작업장)', category: '제1열쇠함#4' },
+  { num: 151, name: 'T2 기계작업장 2층 CPS', category: '제1열쇠함#4' },
+  { num: 152, name: 'T2 기계작업장 1층', category: '제1열쇠함#4' },
+  { num: 153, name: 'T2 전기작업장 2층', category: '제1열쇠함#4' },
+  { num: 154, name: 'T2 전기작업장 CPS', category: '제1열쇠함#4' },
+  { num: 155, name: '중수도 1층 115호', category: '제1열쇠함#4' },
+  { num: 156, name: '중수도 2층 설비동 205호', category: '제1열쇠함#4' },
+  { num: 157, name: '온실관리동', category: '제1열쇠함#4' },
+  { num: 158, name: '제2보육온실', category: '제1열쇠함#4' },
+  { num: 159, name: '제2조경작업장', category: '제1열쇠함#4' },
+  { num: 160, name: 'T2 조경시설 통신실', category: '제1열쇠함#4' },
+  { num: 161, name: 'T2 조경시설 CPS실', category: '제1열쇠함#4' },
+  { num: 162, name: '신불레이더', category: '제1열쇠함#4' },
+  { num: 163, name: '왕산레이더 3F CPS', category: '제1열쇠함#4' },
+  { num: 164, name: '오성산관제수신소', category: '제1열쇠함#4' },
+  { num: 165, name: '4단계 신불레이더', category: '제1열쇠함#4' },
+  { num: 166, name: '삼목레이더 CPS 1층', category: '제1열쇠함#4' },
+  { num: 167, name: '삼목레이더 CPS 2층', category: '제1열쇠함#4' },
+  { num: 168, name: '삼목레이더 CPS 3층', category: '제1열쇠함#4' },
+  { num: 169, name: 'ING모터스', category: '제1열쇠함#4' },
+  { num: 170, name: '차량정비고B', category: '제1열쇠함#4' },
+  { num: 171, name: '차량정비고C', category: '제1열쇠함#4' },
+  { num: 172, name: '버스세차장', category: '제1열쇠함#4' },
+  { num: 173, name: 'GSE 주유소C', category: '제1열쇠함#4' },
+  { num: 174, name: 'GSE 주유소D', category: '제1열쇠함#4' },
+  { num: 175, name: '단기주차관리소', category: '제1열쇠함#4' },
+  { num: 176, name: '주차대행관리소B', category: '제1열쇠함#4' },
+  { num: 177, name: 'T2예약주차장 0118 부통신실(ICT방향 로터리옆)', category: '제1열쇠함#4' },
+  { num: 178, name: '노선버스사무소', category: '제1열쇠함#4' },
+  { num: 179, name: '노선버스사무소B 1F,2F', category: '제1열쇠함#4' },
+  { num: 180, name: '제2열쇠함', category: '제1열쇠함#4' },
+  // 제2열쇠함 #1
+  { num: 181, name: '순환버스사무소', category: '제2열쇠함#1' },
+  { num: 182, name: '고객대기소A', category: '제2열쇠함#1' },
+  { num: 183, name: '고객대기소B', category: '제2열쇠함#1' },
+  { num: 184, name: '택시편의시설', category: '제2열쇠함#1' },
+  { num: 185, name: '택시기사휴게소', category: '제2열쇠함#1' },
+  { num: 186, name: '다목적체육관 (방송실 외함)', category: '제2열쇠함#1' },
+  { num: 187, name: 'T2 44611 CPS 앞 정문', category: '제2열쇠함#1' },
+  { num: 188, name: 'T2 45611 CPS 앞 정문', category: '제2열쇠함#1' },
+  { num: 189, name: 'T2 RACK KEY', category: '제2열쇠함#1' },
+  { num: 190, name: '접지단자함', category: '제2열쇠함#1' },
+  { num: 191, name: '삼목/신불 동케이블 단자함', category: '제2열쇠함#1' },
+  { num: 192, name: '출입통제소 LAND MRO', category: '제2열쇠함#1' },
+  { num: 193, name: 'Airside MG1 초소', category: '제2열쇠함#1' },
+  { num: 194, name: '차량정비고A', category: '제2열쇠함#1' },
+  // 제2열쇠함 #2
+  { num: 216, name: 'T1 교통센터 주통신실 창고', category: '제2열쇠함#2' },
+  { num: 217, name: '사무실 문구함', category: '제2열쇠함#2' },
+  { num: 218, name: '2층 자재창고', category: '제2열쇠함#2' },
+  { num: 219, name: '자재서류 보관함', category: '제2열쇠함#2' },
+  { num: 220, name: '계측기 보관함', category: '제2열쇠함#2' },
+];
+
+function openKeySearch() {
+  document.getElementById('keyModalOverlay').classList.add('open');
+  document.getElementById('keyModal').classList.add('open');
+  document.getElementById('keySearchInput').value = '';
+  document.getElementById('keySearchInput').focus();
+  searchKeys();
+  history.pushState({ modal: 'keySearch' }, '');
+}
+
+function closeKeySearch() {
+  document.getElementById('keyModalOverlay').classList.remove('open');
+  document.getElementById('keyModal').classList.remove('open');
+}
+
+function searchKeys() {
+  const q = document.getElementById('keySearchInput').value.trim().toLowerCase();
+  const activeKeyData = getActiveKeyData();
+  const results = q
+    ? activeKeyData.filter(k => k.name.toLowerCase().includes(q) || String(k.num).includes(q))
+    : [...activeKeyData];
+
+  results.sort((a, b) => {
+    const na = parseInt(a.num) || 0;
+    const nb = parseInt(b.num) || 0;
+    return na - nb;
+  });
+
+  const el = document.getElementById('keyResults');
+  if (results.length === 0) {
+    el.innerHTML = `<div class="key-empty">검색 결과가 없습니다.</div>`;
+    return;
+  }
+  el.innerHTML = results.map(k => `
+    <div class="key-item">
+      <span class="key-num">${k.num}</span>
+      <span class="key-name">${k.name}</span>
+      <span class="key-category">${k.category}</span>
+    </div>
+  `).join('');
+}
+
+// ====== 비상연락처 데이터 ======
+const emergencyData = {
+  'AICC': [
+    { name: '━ AICC ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-6770', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-6753', remark: '' },
+    { name: '기계시설 유지관리2', phone: '032-741-6761', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '인재개발원': [
+    { name: '━ 인재개발원(항공훈련센터) ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-7395', remark: '' },
+    { name: '기계시설 유지관리2', phone: '032-741-4257', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-4507', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '자유무역': [
+    { name: '━ 자유무역, 화물C, 북측항공화물 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-6770', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-1300', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-1305', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-1306', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '소각시설': [
+    { name: '━ 소각시설 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-6770', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-7154', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-7154', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7154', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '중수도시설': [
+    { name: '━ 중수도시설 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7407', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-6690', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6690', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-6690', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '관제탑': [
+    { name: '━ 관제탑 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-6770', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-6755', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-7016', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '배전변전소A': [
+    { name: '━ 배전변전소A ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '비상접근관제소': [
+    { name: '━ 비상접근관제소 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '제설작업장1': [
+    { name: '━ 제설작업장1 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '제설작업장2': [
+    { name: '━ 제설작업장2 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  'T2 (서편)': [
+    { name: '━ T2 (서편) ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7060', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  'T2 (동편)': [
+    { name: '━ T2 (동편) ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7060', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  'T2 (4단계 서편)': [
+    { name: '━ T2 (4단계 서편) ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7060', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  'T2 (4단계 동편)': [
+    { name: '━ T2 (4단계 동편) ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7060', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  'T2 (교통센터)': [
+    { name: '━ T2 (교통센터) ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7060', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '제2합동청사': [
+    { name: '━ 제2합동청사 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7060', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  'T2 (계류장관제소)': [
+    { name: '━ T2 (계류장관제소) ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '오성산관제수신소': [
+    { name: '━ 오성산관제수신소 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '삼목레이더': [
+    { name: '━ 삼목레이더 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '동화작업장B 야생동물관리소': [
+    { name: '━ 동화작업장B 야생동물관리소 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '신불관제송신소': [
+    { name: '━ 신불관제송신소 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '제2합동청사 증축동': [
+    { name: '━ 제2합동청사 증축동 ━', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7060', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-743-0116', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '4단계 (LAND)': [
+    { name: '━ 4단계 (LAND) ━', phone: '', remark: '' },
+    { name: 'T2 장기주차장A · T2 장기주차장B · ICT센터 증축동 · T2조경시설 · T2 중수도시설 · T2택시편의시설 · T2 주차대행사무소 · 노선버스관리사무소B', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '4단계 (AIR)': [
+    { name: '━ 4단계 (AIR) ━', phone: '', remark: '' },
+    { name: '주변전소C · 동절기장비고F · AIRSIDE제설작업장 · T2 원격탑승교', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '3단계 (AIR)': [
+    { name: '━ 3단계 (AIR) ━', phone: '', remark: '' },
+    { name: '항공등화작업장 · 제2계류장관제소 · 관제탑 지원시설동', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '3단계 (LAND)': [
+    { name: '━ 3단계 (LAND) ━', phone: '', remark: '' },
+    { name: 'ICT센터 · 버스세차장 · 제2중앙창고 · 제2건축작업장 · 출입초소#10 · 출입초소#11 · 제2조경(토목)작업장 · 제2토목장비고 · 제2보육온실 · 노선버스사무소 · 순환버스관리소 · 차량정비고C · 고객대기소A · 고객대기소B · 주차대행관리소B · 택시기사휴게소 · 3단계 소방시설 · 일반주유소C · T2제설자재창고 · 동절기장비고E', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '기타 (AIR)': [
+    { name: '━ 기타 (AIR) ━', phone: '', remark: '' },
+    { name: 'EG1초소 · GSE주유소A · GSE주유소B · GSE주유소C · GSE주유소D · 동력동A · 배전변전소#3 · 배전변전소#4 · 배전변전소B · 소방대본부 · 소방대분소 · 소방대분소B · 소방훈련시설 · 통신시설동 · 동절기장비고A · 동절기장비고B · 동절기장비고C · 제설작업장1 · 주변전소A · 출입초소B · 항공교통관제소(ACC)', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-743-5475', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7133', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-743-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-743-3788', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-743-3789', remark: '' },
+  ],
+  '지하공동구': [
+    { name: '━ 지하공동구 비상연락망 ━', phone: '', remark: '' },
+    { name: '인천공항시설관리 공항통신사업소', phone: '032-741-7051', remark: '' },
+    { name: '인천공항공사 통합운영센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '인천공항공사 통합운영센터(IOC)2', phone: '032-741-2964', remark: '' },
+    { name: '인천공항공사 통합운영센터(IOC)3', phone: '032-741-2965', remark: '' },
+    { name: '인천공항공사 당직실', phone: '032-741-2301', remark: '' },
+    { name: '인천공항공사 당직실2', phone: '032-741-2302', remark: '' },
+    { name: '인천공항공사 항공보안상황실', phone: '032-741-4972', remark: '' },
+    { name: '인천공항공사 공항소방대', phone: '032-741-2119', remark: '' },
+    { name: '인천공항공사 계류장관리소', phone: '032-741-2991', remark: '' },
+    { name: '인천공항공사 계류장관리소2', phone: '032-741-2992', remark: '' },
+    { name: '인천공항공사 계류장관리소3', phone: '032-741-2993', remark: '' },
+    { name: '인천공항공사 계류장관제소', phone: '032-741-3377', remark: '' },
+    { name: '인천공항공사 계류장관제소2', phone: '032-741-3378', remark: '' },
+    { name: '인천소방본부 119종합상황실', phone: '032-870-3131', remark: '' },
+    { name: '서울지방항공청 사고수습본부', phone: '032-741-3752', remark: '' },
+    { name: '서울지방항공청 관제탑', phone: '032-740-2421', remark: '' },
+    { name: '서울지방항공청 항공정보통신센터', phone: '032-740-2261', remark: '' },
+    { name: '서울지방항공청 항공정보통신센터2', phone: '032-740-2262', remark: '' },
+    { name: '서울지방항공청 항공정보통신센터3', phone: '032-740-2263', remark: '' },
+    { name: '서울지방항공청 관제과', phone: '032-740-2182', remark: '' },
+    { name: '서울지방항공청 관제과2', phone: '032-740-2183', remark: '' },
+    { name: '서울지방항공청 당직실', phone: '032-740-2107', remark: '' },
+    { name: '서울지방항공청 당직실2', phone: '032-740-2108', remark: '' },
+    { name: '서울지방항공청 통신전자과(주간)', phone: '032-740-2201', remark: '' },
+    { name: '서울지방항공청 통신전자과(야간)', phone: '032-740-2107', remark: '' },
+    { name: '인천광역시 재난종합상황실', phone: '032-432-0119', remark: '' },
+    { name: '인천지방경찰청 치안상황실', phone: '032-433-3105', remark: '' },
+    { name: '항공기상청', phone: '032-222-3067', remark: '' },
+    { name: '한국공항공사 항로시설본부', phone: '053-668-0363', remark: '' },
+    { name: 'KT 광선로 운영', phone: '032-751-1499', remark: '' },
+    { name: 'SKT 광선로 운영', phone: '070-7602-8421', remark: '' },
+    { name: 'LG U+ 광선로 운영', phone: '032-712-1790', remark: '' },
+  ],
+  '동측 (LAND) 1': [
+    { name: '━ 동측 (LAND) 1 ━', phone: '', remark: '' },
+    { name: '건축작업장 · 관제수신소 · 기계전기작업장 · 항공기상청 · 동력동B · 배수지 · 온실 · 온실관리동 · 자원분류처리장 · 조경장비고 · 주유소A · 주유소B · 주차관리소B · 주차관리소C · 차량정비고A · 차량정비고B · 창고(중앙창고) · 공항경비대본부 · 토목작업장 · 토목장비고', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-6770', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-6753', remark: '' },
+    { name: '기계시설 유지관리2', phone: '032-741-6761', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '동측 (LAND) 2': [
+    { name: '━ 동측 (LAND) 2 ━', phone: '', remark: '' },
+    { name: '2단계 경비초소 · 2단계 자유무역', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-6770', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-1300', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '동측 (LAND) 3': [
+    { name: '━ 동측 (LAND) 3 ━', phone: '', remark: '' },
+    { name: 'ING모터스 · 공항감시레이다송신소B(신불도) · 관제송신소 · 주변전소B · 제2신불레이다', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-6770', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-6768', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '동측 (LAND) 4': [
+    { name: '━ 동측 (LAND) 4 ━', phone: '', remark: '' },
+    { name: '공항감시레이다송신소A · 기상레이다', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-7425', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-7395', remark: '' },
+    { name: '기계시설 유지관리2', phone: '032-741-4527', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-8123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+  '동측 (LAND) 5': [
+    { name: '━ 동측 (LAND) 5 ━', phone: '', remark: '' },
+    { name: '단기주차관리소 · 주차관리소A', phone: '', remark: '' },
+    { name: '공사당직실', phone: '032-741-2301', remark: '' },
+    { name: '상황관리센터(IOC)', phone: '032-741-2961', remark: '' },
+    { name: '대테러상황실(TCC) T1', phone: '032-741-3900', remark: '사고전화: 032-741-4949' },
+    { name: '대테러상황실(TCC) T2', phone: '032-741-0202', remark: '사고전화: 032-741-4949' },
+    { name: '외곽대테러상황실(PCC)', phone: '032-741-3906', remark: '' },
+    { name: '망관리센터(NMC)', phone: '032-741-0000', remark: '' },
+    { name: '방재센터(여객)', phone: '032-741-2873', remark: '' },
+    { name: '소방대상황실', phone: '032-741-2119', remark: '' },
+    { name: '건축시설 유지관리', phone: '032-741-6770', remark: '' },
+    { name: '기계시설 유지관리', phone: '032-741-7409', remark: '' },
+    { name: '전력시설 유지관리', phone: '032-741-6123', remark: '' },
+    { name: '소방시설 유지관리', phone: '032-741-7006', remark: '' },
+    { name: '보안시설 유지관리', phone: '032-741-7106', remark: '' },
+    { name: '공항통신 통합배선', phone: '032-741-7051', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 안내방송', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 영상위성', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 교환설비', phone: '032-741-1200', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 무선설비_TRS', phone: '032-741-7063', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 전원설비_UPS', phone: '032-743-7059', remark: '야간/휴일: 032-741-7092' },
+    { name: '공항통신 설비시계', phone: '032-741-7053', remark: '야간/휴일: 032-741-7092' },
+    { name: '운항통신 전송장비', phone: '032-741-0000', remark: '' },
+    { name: '운항통신 네트워크', phone: '032-741-7082', remark: '' },
+    { name: '운항통신 운항정보', phone: '032-741-2949', remark: '' },
+  ],
+};
+
+// 카테고리 그룹 구조
+const emgGroups = {
+  '제2여객터미널': ['T2 (서편)','T2 (동편)','T2 (4단계 서편)','T2 (4단계 동편)','T2 (교통센터)','T2 (계류장관제소)','관제탑'],
+  '부대건물': ['4단계 (LAND)','4단계 (AIR)','3단계 (LAND)','3단계 (AIR)','기타 (AIR)'],
+  '부대건물(동측LAND)': ['동측 (LAND) 1','동측 (LAND) 2','동측 (LAND) 3','동측 (LAND) 4','동측 (LAND) 5'],
+  '외곽시설': ['소각시설','중수도시설','배전변전소A','제설작업장1','제설작업장2','비상접근관제소','삼목레이더','오성산관제수신소','신불관제송신소','동화작업장B 야생동물관리소','AICC','인재개발원','자유무역'],
+  '청사': ['제2합동청사','제2합동청사 증축동'],
+  '지하공동구': ['지하공동구'],
+};
+
+let selectedEmgCategory = null;
+let selectedEmgGroup = null;
+
+function openEmergency() {
+  document.getElementById('emergencyOverlay').classList.add('open');
+  document.getElementById('emergencyModal').classList.add('open');
+  document.getElementById('emergencySearchInput').value = '';
+  selectedEmgCategory = null;
+  selectedEmgGroup = null;
+  renderEmgCategories();
+  renderEmergency();
+  history.pushState({ modal: 'emergency' }, '');
+}
+
+function closeEmergency() {
+  document.getElementById('emergencyOverlay').classList.remove('open');
+  document.getElementById('emergencyModal').classList.remove('open');
+}
+
+function renderEmgCategories() {
+  let html = '';
+  // 1단계: 그룹 버튼
+  html += `<div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.4rem;">`;
+  for (const group of Object.keys(emgGroups)) {
+    const isActive = group === selectedEmgGroup || (group === '지하공동구' && selectedEmgCategory === '지하공동구');
+    // 지하공동구는 하위 없이 바로 선택
+    if (group === '지하공동구') {
+      html += `<button class="emg-cat-btn ${isActive ? 'active' : ''}" onclick="selectEmgCategory('지하공동구');selectedEmgGroup='지하공동구';renderEmgCategories();">${group}</button>`;
+    } else {
+      html += `<button class="emg-cat-btn ${isActive ? 'active' : ''}" onclick="selectEmgGroup('${group}')">${group}</button>`;
+    }
+  }
+  html += `</div>`;
+
+  // 2단계: 선택된 그룹의 세부 카테고리
+  if (selectedEmgGroup) {
+    html += `<div id="emgSubScroll" style="display:flex;flex-wrap:wrap;gap:0.35rem;padding-top:0.3rem;border-top:1px solid var(--border);padding-bottom:0.2rem;">`;
+    for (const cat of emgGroups[selectedEmgGroup]) {
+      const isActive = cat === selectedEmgCategory;
+      html += `<button class="emg-cat-btn ${isActive ? 'active' : ''}" style="font-size:0.8rem;" onclick="selectEmgCategory('${cat}')">${cat}</button>`;
+    }
+    html += `</div>`;
+  }
+
+  document.getElementById('emgCategories').innerHTML = html;
+
+  // PC 마우스 드래그 스크롤
+  const scroller = document.getElementById('emgSubScroll');
+  if (scroller) {
+    let isDown = false, startX, scrollLeft;
+    scroller.addEventListener('mousedown', e => {
+      isDown = true;
+      scroller.style.cursor = 'grabbing';
+      startX = e.pageX - scroller.offsetLeft;
+      scrollLeft = scroller.scrollLeft;
+    });
+    scroller.addEventListener('mouseleave', () => { isDown = false; scroller.style.cursor = 'grab'; });
+    scroller.addEventListener('mouseup', () => { isDown = false; scroller.style.cursor = 'grab'; });
+    scroller.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scroller.offsetLeft;
+      scroller.scrollLeft = scrollLeft - (x - startX);
+    });
+  }
+}
+
+function selectEmgGroup(group) {
+  selectedEmgGroup = group;
+  selectedEmgCategory = null;
+  document.getElementById('emergencySearchInput').value = '';
+  renderEmgCategories();
+  renderEmergency();
+}
+
+function selectEmgCategory(cat) {
+  selectedEmgCategory = cat;
+  document.getElementById('emergencySearchInput').value = '';
+  renderEmgCategories();
+  renderEmergency();
+}
+
+function searchEmergency() {
+  const q = document.getElementById('emergencySearchInput').value.trim().toLowerCase();
+  const suggestEl = document.getElementById('emergencySuggestions');
+
+  if (!q) {
+    suggestEl.style.display = 'none';
+    suggestEl.innerHTML = '';
+    selectedEmgCategory = null;
+    selectedEmgGroup = null;
+    renderEmgCategories();
+    renderEmergency();
+    return;
+  }
+
+  const regex = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  const results = []; // { buildingName, cat, group }
+
+  for (const [cat, contacts] of Object.entries(emergencyData)) {
+    const group = Object.entries(emgGroups).find(([g, cats]) => cats.includes(cat))?.[0] || '';
+
+    for (const c of contacts) {
+      if (c.phone !== '') continue; // subtitle만 대상
+      if (c.name.startsWith('━')) continue; // 제목 제외
+
+      // · / 로 분리해서 개별 건물명 검색
+      const buildings = c.name.split(/[·\/]/).map(s => s.trim()).filter(Boolean);
+      for (const b of buildings) {
+        if (b.toLowerCase().includes(q)) {
+          results.push({ buildingName: b, cat, group });
+        }
+      }
+    }
+
+    // 카테고리 이름 자체도 검색 (장비명 제목은 검색 제외)
+    if (cat.toLowerCase().includes(q)) {
+      if (!results.find(r => r.cat === cat && r.buildingName === cat)) {
+        results.push({ buildingName: cat, cat, group });
+      }
+    }
+  }
+
+  if (results.length === 0) {
+    suggestEl.style.display = 'flex';
+    suggestEl.innerHTML = `<div style="font-size:0.78rem;color:var(--text-muted);padding:0.3rem 0;">검색 결과 없음</div>`;
+    document.getElementById('emergencyResults').innerHTML = `<div class="key-empty">검색 결과가 없습니다.</div>`;
+    return;
+  }
+
+  suggestEl.style.display = 'flex';
+  suggestEl.innerHTML = results.map(({ buildingName, cat, group }) => {
+    const highlighted = buildingName.replace(regex, '<mark style="background:rgba(245,158,11,0.35);color:var(--highlight);border-radius:2px;padding:0 1px;">$1</mark>');
+    return `<div onclick="selectFromSuggestion('${cat}')" style="cursor:pointer;padding:0.35rem 0.6rem;border-radius:8px;font-size:0.82rem;color:var(--text);background:var(--surface2);border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:0.5rem;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--red)'" onmouseout="this.style.borderColor='var(--border)'">
+      <span>${highlighted}</span>
+      <span style="font-size:0.7rem;color:var(--text-muted);white-space:nowrap;">${cat}</span>
+    </div>`;
+  }).join('');
+
+  document.getElementById('emergencyResults').innerHTML = `<div class="key-empty">목록에서 선택해주세요.</div>`;
+}
+
+function selectFromSuggestion(cat) {
+  document.getElementById('emergencySearchInput').value = '';
+  document.getElementById('emergencySuggestions').style.display = 'none';
+  document.getElementById('emergencySuggestions').innerHTML = '';
+  // 그룹도 자동 선택
+  const group = Object.entries(emgGroups).find(([g, cats]) => cats.includes(cat))?.[0] || null;
+  selectedEmgGroup = group;
+  selectedEmgCategory = cat;
+  renderEmgCategories();
+  renderEmergency();
+}
+
+function renderEmergency() {
+  const q = document.getElementById('emergencySearchInput').value.trim().toLowerCase();
+
+  // 검색어 하이라이트 함수
+  function highlight(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return text.replace(regex, '<mark style="background:rgba(245,158,11,0.35);color:var(--highlight);border-radius:2px;padding:0 1px;">$1</mark>');
+  }
+  let items = [];
+
+  if (q) {
+    for (const [cat, contacts] of Object.entries(emergencyData)) {
+      // 카테고리 제목 문구(phone==='')에 검색어가 포함되면 카테고리 전체 표시
+      const labelMatch = contacts.some(c => c.phone === '' && c.name.toLowerCase().includes(q));
+      if (labelMatch) {
+        items.push(...contacts.map(c => ({ ...c, category: cat })));
+        continue;
+      }
+      // 일반 장비명/전화번호 검색
+      for (const c of contacts) {
+        if (c.phone !== '' && (c.name.toLowerCase().includes(q) || c.phone.includes(q))) {
+          items.push({ ...c, category: cat });
+        }
+      }
+    }
+  } else if (selectedEmgCategory) {
+    items = (emergencyData[selectedEmgCategory] || []).map(c => ({ ...c, category: selectedEmgCategory }));
+  }
+
+  const el = document.getElementById('emergencyResults');
+
+  if (!q && !selectedEmgCategory) {
+    el.innerHTML = `<div class="key-empty">${selectedEmgGroup ? '세부 구역을 선택해주세요.' : '구역을 선택해주세요.'}</div>`;
+    return;
+  }
+  if (items.length === 0) {
+    el.innerHTML = `<div class="key-empty">검색 결과가 없습니다.</div>`;
+    return;
+  }
+
+  el.innerHTML = items.map(c => {
+    if (c.phone === '') {
+      if (c.name.startsWith('━')) {
+        return `<div style="text-align:center;color:var(--accent2);font-size:0.8rem;font-weight:700;padding:0.4rem;letter-spacing:0.05em;font-family:'JetBrains Mono',monospace;">${c.name}</div>`;
+      }
+      return `<div style="text-align:center;color:var(--text-muted);font-size:0.7rem;padding:0.2rem 0.8rem 0.5rem;line-height:1.6;">${c.name}</div>`;
+    }
+    const catSpan = (c.category && q) ? `<span class="emg-sub">${highlight(c.category, q)}</span>` : '';
+    const hasRemark = !!c.remark;
+    const isSago = hasRemark && c.remark.includes('사고전화');
+    const remarkNum = hasRemark ? c.remark.replace(/.*?(\d[\d-]+)$/, '$1').replace(/-/g,'') : '';
+    const remarkLabel = hasRemark ? c.remark.replace(/.*?: /, '') : '';
+    const remarkIcon = isSago ? '사고전화' : '야간휴일';
+    const remarkClass = isSago ? 'emg-sago-link' : 'emg-night-link';
+    const remarkBtn = hasRemark ? `<a class="${remarkClass}" href="tel:${remarkNum}">${remarkIcon} ${remarkLabel}</a>` : '';
+    return `<div class="emg-item"><div class="emg-name">${highlight(c.name, q)}${catSpan}</div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;"><a class="emg-phone-link" href="tel:${c.phone.replace(/-/g,'')}">${highlight(c.phone, q)}</a>${remarkBtn}</div></div>`;
+  }).join('');
+}
+
+// 뒤로가기 시 모달 닫기
+window.addEventListener('popstate', function(e) {
+  const keyModal = document.getElementById('keyModal');
+  const emergencyModal = document.getElementById('emergencyModal');
+  if (keyModal && keyModal.classList.contains('open')) {
+    closeKeySearch();
+  } else if (emergencyModal && emergencyModal.classList.contains('open')) {
+    closeEmergency();
+  }
+});
+
+init();
+</script>
+</body>
+</html>
+
+</body></html>
