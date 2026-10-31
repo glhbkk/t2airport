@@ -40,6 +40,10 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
+  .terminal-sel-btn.active {
+    background: var(--accent) !important;
+    color: #fff !important;
+  }
 
   /* Background grid */
   body::before {
@@ -972,8 +976,12 @@
 <body>
 <div class="container">
   <header>
-    <div class="header-left">
+    <div class="header-left" style="display:flex;align-items:center;gap:0.5rem;">
       <h1>T2 점검</h1>
+      <div style="display:flex;gap:0.2rem;">
+        <button class="terminal-sel-btn" data-t="T1" onclick="setTerminal('T1')" style="padding:0.2rem 0.6rem;font-size:0.75rem;border-radius:6px;border:1.5px solid var(--accent);background:transparent;color:var(--text-muted);cursor:pointer;font-weight:600;transition:all 0.2s;">T1</button>
+        <button class="terminal-sel-btn" data-t="T2" onclick="setTerminal('T2')" style="padding:0.2rem 0.6rem;font-size:0.75rem;border-radius:6px;border:1.5px solid var(--accent);background:transparent;color:var(--text-muted);cursor:pointer;font-weight:600;transition:all 0.2s;">T2</button>
+      </div>
     </div>
     <div style="display:flex; gap:0.3rem;">
       <button class="key-search-btn" onclick="openEmergency()" style="padding: 0.6rem 0.8rem; font-size: 1.1rem;">📞</button><button class="key-search-btn" onclick="openKeySearch()">🔑 열쇠 검색</button>
@@ -1452,9 +1460,150 @@ const inspectionData = {
   }
 };
 
+// ====== T1 점검 데이터 ======
+const inspectionDataT1 = {
+  'T1_1주차': {
+    cycle: '1주차',
+    grade: 'T1',
+    inspector: 'T1 대조',
+    items: [
+      { title: '관제송신소·주배수지 등', locations: ['관제송신소','제2신불레이더','공항감시레이더송신소B','신불관제송신소','일반주유소A','주배수지'], count: 6, days: ['일'] },
+      { title: '제1여객터미널', locations: ['31618','32417','32822','32604','33403','42611'], count: 6, days: ['월'] },
+      { title: '제1여객터미널 D2', locations: ['51200(D2)','51600(D2)','52000(D2)','52400(D2)','52800(D2)','53200(D2)','54000(D2)','54400(D2)','54800(D2)','55200(D2)','55600(D2)','56000(D2)'], count: 12, days: ['화'] },
+      { title: '제1여객터미널', locations: ['40207','40620','41215','41466','41805','42009','42421','43429','48009','48202'], count: 10, days: ['수'] },
+      { title: '제1여객터미널', locations: ['50602','51404','52205','53014','53400','48803','58204','58413','58806'], count: 9, days: ['목'] },
+      { title: '제1여객터미널·정부합동청사', locations: ['13819','21231','22035','22402','23201','31018','31037','63402','160A','161A','256A','257A','381A','382A','446A','447A','550A','551A','643A','644A'], count: 20, days: ['금'] },
+      { title: '동력동A·소방대분소A 등', locations: ['동력동A','소방대분소A','GSE주유소B','GSE주유소D','배전변전소B'], count: 5, days: ['토'] },
+    ]
+  },
+  'T1_2주차': {
+    cycle: '2주차',
+    grade: 'T1',
+    inspector: 'T1 대조',
+    items: [
+      { title: '출입초소B·동절기장비고 등', locations: ['출입초소B','소방훈련시설','소방대분소B','경비대분소','동절기장비고B','동절기장비고D','동절기장비고E','동절기장비고F','Airside제설작업장','Airside건축작업장'], count: 10, days: ['일'] },
+      { title: '제1여객터미널', locations: ['34205','34417','34822','35003','35623','45411'], count: 6, days: ['월'] },
+      { title: '제1여객터미널 V/D', locations: ['51200(V)','51600(V)','52000(V)','52400(V)','52800(V)','53200(V)','54000(V)','54400(V)','54800(V)','55200(V)','55600(V)','56000(V)','51200(D)','51600(D)','52000(D)','52400(D)','52800(D)','53200(D)','54000(D)','54400(D)','54800(D)','55200(D)','55600(D)','56000(D)'], count: 24, days: ['화'] },
+      { title: '제1여객터미널', locations: ['44218','45613','45812','46012','46262','47004','49005','49212','49423'], count: 9, days: ['수'] },
+      { title: '제1여객터미널', locations: ['54217','54605','55412','56604','57403','49804','59207','59412','59809'], count: 9, days: ['목'] },
+      { title: '제1여객터미널·공항청사(동관)', locations: ['23611','24401','24805','25229','26022','36212','37007','64205','B116','108','208','209','308','309','408','409','508','509','608','609','708','709'], count: 22, days: ['금'] },
+      { title: '제설작업장2·주변전소B 등', locations: ['제설작업장2','주변전소B','주변전소B 증축동','중수도시설','공항모터스','오성산관제수신소'], count: 6, days: ['토'] },
+    ]
+  },
+  'T1_3주차': {
+    cycle: '3주차',
+    grade: 'T1',
+    inspector: 'T1 대조',
+    items: [
+      { title: '주차관리소B·북측화물창고 등', locations: ['주차관리소B','주차관리소C','북측항공화물창고 261','북측항공화물창고 262','북측항공화물창고 263','행정지원센터 2층','사업지원센터 113','사업지원센터 208','사업지원센터 308','사업지원센터 408','사업지원센터 508','FTZ 2단계 통신실','FTZ 2단계 경비초소','소각시설'], count: 14, days: ['일'] },
+      { title: '제1여객터미널', locations: ['33861','38025','38208','38605','61403','62202','62623','62624'], count: 8, days: ['월'] },
+      { title: 'TOLL C·주차타워(서측)', locations: ['TOLL C','W103','W113','W123','W213','W223','W313','W323','W413','W423','단기주차관리소'], count: 11, days: ['화'] },
+      { title: '탑승동', locations: ['40208','40406','40604','40806','41011','41212','41408','41807','41815','42209','42420','42612','42823'], count: 13, days: ['수'] },
+      { title: '제1교통센터', locations: ['11101','30206','30505','30510','30603','30604','40210','40504','40505','40604'], count: 10, days: ['목'] },
+      { title: '제1교통센터·공항청사(서관)', locations: ['50207','50237','50505','50507','50604','50609','50614','50911','51012','60206','60614','70216','146A','146B','234A','234B','324A','324B','424A','424B','551A','551B','637A','637B'], count: 24, days: ['금'] },
+      { title: '배전변전소#3·항공등화작업장 등', locations: ['배전변전소#3','제2계기착륙표지소','항공등화작업장','EG1초소','항공등화작업장B야생동물통제대','GSE주유소A','주차관리소A'], count: 7, days: ['토'] },
+    ]
+  },
+  'T1_4주차': {
+    cycle: '4주차',
+    grade: 'T1',
+    inspector: 'T1 대조',
+    items: [
+      { title: 'AICC·비상접근관제소 등', locations: ['AICC 203','B36A','B36B','139A','139B','227A','233B','349A','349B','413A','413B','비상접근관제소','항공교통관제소(ACC)'], count: 13, days: ['일'] },
+      { title: '제1여객터미널', locations: ['39025','39208','39603','65023','65024','65404','65819','66603'], count: 8, days: ['월'] },
+      { title: 'TOLL A·주차타워(동측)', locations: ['TOLL A','TOLL D','E103','E113','E123','E213','E223','E313','E323','E413','E423'], count: 11, days: ['화'] },
+      { title: '탑승동·계류장관제탑', locations: ['11207','11410','11612','11807','61004','62004','계류장관제탑 202','계류장관제탑 1005'], count: 8, days: ['수'] },
+      { title: '제1교통센터', locations: ['30308','30717','30804','30808','40311','40704','40718','40805','40806'], count: 9, days: ['목'] },
+      { title: '제1교통센터·스카이돔', locations: ['50308','50336','50707','50710','50715','50802','50808','50819','51213','60308','60715','70317','스카이돔 당재실','TPS실'], count: 14, days: ['금'] },
+      { title: '공항경비대본부·기계전기작업장 등', locations: ['공항경비대본부','기계전기작업장','건축작업장','제설작업장1','차량정비고B','온실관리동','토목장비고B','토목장비고','토목작업장','자원분류처리장','관제수신소','3단계 자유무역 통신실','삼목레이더','온실','조경장비고','중앙창고','차량정비고A','일반주유소B','공항경비대 경비실'], count: 19, days: ['토'] },
+    ]
+  },
+};
+
+// ====== T1 열쇠 데이터 ======
+const keyDataT1 = [
+  { num: 1, name: '3단계 물류단지', category: 'T1 열쇠함' },
+  { num: 2, name: 'AICC 부통신실, CPS실', category: 'T1 열쇠함' },
+  { num: 3, name: 'GSE주유소 C', category: 'T1 열쇠함' },
+  { num: 4, name: 'GSE주유소 D', category: 'T1 열쇠함' },
+  { num: 5, name: 'ING 모터스', category: 'T1 열쇠함' },
+  { num: 6, name: 'T1 31412 CPS실 / 축전지실', category: 'T1 열쇠함' },
+  { num: 7, name: 'T1 31412 UPS내 CPS실', category: 'T1 열쇠함' },
+  { num: 8, name: '-', category: 'T1 열쇠함' },
+  { num: 9, name: '-', category: 'T1 열쇠함' },
+  { num: 10, name: '-', category: 'T1 열쇠함' },
+  { num: 11, name: 'T1 CPS실-2', category: 'T1 열쇠함' },
+  { num: 12, name: 'T1 CPS실-3', category: 'T1 열쇠함' },
+  { num: 13, name: 'T1 CPS실-4', category: 'T1 열쇠함' },
+  { num: 14, name: 'T1 체크인카운터 52400(D2) 부통신실', category: 'T1 열쇠함' },
+  { num: 15, name: 'T1 체크인카운터 54800(D2)-AF9 부통신실', category: 'T1 열쇠함' },
+  { num: 16, name: 'T1 체크인카운터 55200(D2)-AF8 부통신실', category: 'T1 열쇠함' },
+  { num: 17, name: 'T1 체크인카운터 부통신실-1', category: 'T1 열쇠함' },
+  { num: 18, name: 'T1 체크인카운터 부통신실-2', category: 'T1 열쇠함' },
+  { num: 19, name: '건축작업장', category: 'T1 열쇠함' },
+  { num: 20, name: '경비대 C동 CPS실', category: 'T1 열쇠함' },
+  { num: 21, name: '경비대 본부', category: 'T1 열쇠함' },
+  { num: 22, name: '경비대 분소', category: 'T1 열쇠함' },
+  { num: 23, name: '관제탑', category: 'T1 열쇠함' },
+  { num: 24, name: '관제탑 지원시설동 CPS실', category: 'T1 열쇠함' },
+  { num: 25, name: '기계,전기', category: 'T1 열쇠함' },
+  { num: 26, name: '기상대본부 CPS실', category: 'T1 열쇠함' },
+  { num: 27, name: '단기주차 관리소', category: 'T1 열쇠함' },
+  { num: 28, name: '동력동 A', category: 'T1 열쇠함' },
+  { num: 29, name: '동력동 B', category: 'T1 열쇠함' },
+  { num: 30, name: '동절기 장비고 A', category: 'T1 열쇠함' },
+  { num: 31, name: '동절기 장비고 B', category: 'T1 열쇠함' },
+  { num: 32, name: '동절기 장비고 C', category: 'T1 열쇠함' },
+  { num: 33, name: '동절기 장비고 E', category: 'T1 열쇠함' },
+  { num: 34, name: '차량정비고 B', category: 'T1 열쇠함' },
+  { num: 35, name: '배전변전소 A', category: 'T1 열쇠함' },
+  { num: 36, name: '배전변전소 B', category: 'T1 열쇠함' },
+  { num: 37, name: '비행장 시설(구 기상대)', category: 'T1 열쇠함' },
+  { num: 38, name: '소방대본부', category: 'T1 열쇠함' },
+  { num: 39, name: '소방대분소 A', category: 'T1 열쇠함' },
+  { num: 40, name: '소방대분소 B', category: 'T1 열쇠함' },
+  { num: 41, name: '소방훈련시설', category: 'T1 열쇠함' },
+  { num: 42, name: '스카이돔(방송실 외함)', category: 'T1 열쇠함' },
+  { num: 43, name: '신불레이다', category: 'T1 열쇠함' },
+  { num: 44, name: '싱가폴라운지 캡스키(62624)', category: 'T1 열쇠함' },
+  { num: 45, name: '온실관리동', category: 'T1 열쇠함' },
+  { num: 46, name: '왕산레이다', category: 'T1 열쇠함' },
+  { num: 47, name: '인재개발원', category: 'T1 열쇠함' },
+  { num: 48, name: '자유무역-1(행정지원센터)', category: 'T1 열쇠함' },
+  { num: 49, name: '자유무역-2', category: 'T1 열쇠함' },
+  { num: 50, name: '제설작업장 1', category: 'T1 열쇠함' },
+  { num: 51, name: '제설작업장 2', category: 'T1 열쇠함' },
+  { num: 52, name: '제1교통센터 (부), 30603', category: 'T1 열쇠함' },
+  { num: 53, name: '-', category: 'T1 열쇠함' },
+  { num: 54, name: '제1교통센터 FA-1', category: 'T1 열쇠함' },
+  { num: 55, name: '제1교통센터 락카룸 (입구기준 우측 1)', category: 'T1 열쇠함' },
+  { num: 56, name: '제1교통센터 창고-1 (입구기준 우측 2)', category: 'T1 열쇠함' },
+  { num: 57, name: '제1교통센터 창고-2 (입구기준 좌측)', category: 'T1 열쇠함' },
+  { num: 58, name: '제2자유무역(주통신실)', category: 'T1 열쇠함' },
+  { num: 59, name: '장기주차장 주차타워 동편 부통신실', category: 'T1 열쇠함' },
+  { num: 60, name: '장기주차장 주차타워 서편 부통신실', category: 'T1 열쇠함' },
+  { num: 61, name: '주변전소 A', category: 'T1 열쇠함' },
+  { num: 62, name: '주변전소 B', category: 'T1 열쇠함' },
+  { num: 63, name: '주차유도 부통신실', category: 'T1 열쇠함' },
+  { num: 64, name: '청사(동관) CPS실', category: 'T1 열쇠함' },
+  { num: 65, name: '청사(서관) CPS실', category: 'T1 열쇠함' },
+  { num: 66, name: '청사(서관) 부통신실', category: 'T1 열쇠함' },
+  { num: 67, name: '탑승동 CPS실, 계류장관제탑', category: 'T1 열쇠함' },
+  { num: 68, name: '토목 작업장', category: 'T1 열쇠함' },
+  { num: 69, name: '토목장비고 B', category: 'T1 열쇠함' },
+  { num: 70, name: '통신실 RACK(공용)', category: 'T1 열쇠함' },
+  { num: 71, name: '합동청사 부통신실', category: 'T1 열쇠함' },
+  { num: 72, name: '항공등화B 야생동물', category: 'T1 열쇠함' },
+  { num: 73, name: '항공훈련센터', category: 'T1 열쇠함' },
+  { num: 74, name: '물류단지 후문 초소', category: 'T1 열쇠함' },
+  { num: 75, name: '(T1,교통센터,탑승동) 주통신실 보관함 열쇠', category: 'T1 열쇠함' },
+  { num: 76, name: '-', category: 'T1 열쇠함' },
+];
+
 // ====== STATE ======
 let selectedDate = new Date();
 let crewMode = 'basic'; // 'basic' or 'two'
+let currentTerminal = localStorage.getItem('selectedTerminal') || 'T2'; // 'T1' or 'T2'
 
 // 현재 시간에 따라 주간/야간 자동 설정
 // 오전 6시(6:00) ~ 오후 5시(17:00) → 주간, 그 외 → 야간
@@ -1570,9 +1719,34 @@ function renderCalendar() {
 function init() {
   selectedDate = new Date();
   calendarMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
+  updateTerminalUI();
   renderCalendar();
   renderDateNav();
   renderAll();
+}
+
+function setTerminal(t) {
+  currentTerminal = t;
+  localStorage.setItem('selectedTerminal', t);
+  updateTerminalUI();
+  renderAll();
+}
+
+function updateTerminalUI() {
+  const h1 = document.querySelector('header h1');
+  if (h1) h1.textContent = currentTerminal === 'T1' ? 'T1 점검' : 'T2 점검';
+  // 터미널 선택 버튼 활성화 표시
+  document.querySelectorAll('.terminal-sel-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.t === currentTerminal);
+  });
+}
+
+function getActiveInspectionData() {
+  return currentTerminal === 'T1' ? inspectionDataT1 : inspectionData;
+}
+
+function getActiveKeyData() {
+  return currentTerminal === 'T1' ? keyDataT1 : keyData;
 }
 
 function renderDateNav() {
@@ -1615,7 +1789,8 @@ function getItemsForDay(date) {
   const day = DAYS[date.getDay()];
   const week = getWeekOfMonth(date);
   const result = [];
-  for (const [groupKey, group] of Object.entries(inspectionData)) {
+  const data = getActiveInspectionData();
+  for (const [groupKey, group] of Object.entries(data)) {
     if (group.cycle === `${week}주차`) {
       for (const item of group.items) {
         if (item.days.includes(day)) result.push({ ...item, cycle: group.cycle, grade: group.grade });
@@ -1637,7 +1812,7 @@ function renderAll() {
 
   // 총 개소 계산
   let totalCount = 0;
-  if (isSunday && shiftMode === 'night') {
+  if (isSunday && shiftMode === 'night' && currentTerminal === 'T2') {
     totalCount = nightItems.reduce((s, i) => s + (i.count || 0), 0);
   } else {
     for (const item of items) {
@@ -1666,8 +1841,8 @@ function renderAll() {
 
   let html = '';
 
-  // 일요일이면 주간/야간 버튼 표시, 토요일이면 주간 버튼만 표시
-  if (isSunday) {
+  // 일요일이면 주간/야간 버튼 표시 (T2만), 토요일이면 주간 버튼만 표시
+  if (isSunday && currentTerminal === 'T2') {
     html += `
       <div class="shift-selector">
         <span class="shift-label">점검 시간 :</span>
@@ -1684,8 +1859,8 @@ function renderAll() {
     `;
   }
 
-  if (isSunday && shiftMode === 'night') {
-    // 야간 점검 표시
+  if (isSunday && shiftMode === 'night' && currentTerminal === 'T2') {
+    // 야간 점검 표시 (T2 전용)
     html += `<div class="cards-grid">`;
     for (const item of nightItems) {
       html += renderCard({ ...item, cycle: `${week}주차`, grade: 'A/B/C/무등급' });
@@ -2069,9 +2244,10 @@ function closeKeySearch() {
 
 function searchKeys() {
   const q = document.getElementById('keySearchInput').value.trim().toLowerCase();
+  const activeKeyData = getActiveKeyData();
   const results = q
-    ? keyData.filter(k => k.name.toLowerCase().includes(q) || String(k.num).includes(q))
-    : [...keyData];
+    ? activeKeyData.filter(k => k.name.toLowerCase().includes(q) || String(k.num).includes(q))
+    : [...activeKeyData];
 
   results.sort((a, b) => {
     const na = parseInt(a.num) || 0;
